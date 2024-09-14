@@ -11,9 +11,13 @@ filename = "test.txt"
 
 def main():
 
+    connect = ftplib.FTP_TLS(host, timeout=60)
+    connect.set_debuglevel(2)
+    connect.encoding = "utf-8"
+    connect.login(user_name, password)
+
     try:
-        connect = ftplib.FTP(host, user_name, password)
-        connect.encoding = "utf-8"
+        connect.prot_p()
         connect.dir()
 
         with open(filename, "rb") as f:
