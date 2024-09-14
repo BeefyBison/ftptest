@@ -1,7 +1,4 @@
-import os
-import ssl
 import ftplib
-import sys
 
 host = "192.168.56.101"
 target_path = "/ftpfiles"
